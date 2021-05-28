@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import AuthticationPage from './pages/AuthenticationPage'
+import Layout from "./layout/Layout";
+import Homepage from "./pages/Homepage";
+import FileContextProvider from "./contexts/FileContext";
+import ModalContextProvider from "./contexts/ModalContext";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+        <BrowserRouter>
+          <Switch>
+            <Route path="/auth" component={AuthticationPage} />
+            <FileContextProvider> 
+              <ModalContextProvider>
+                  <Layout>
+                        <Route exact path="/" component={Homepage} />
+                  </Layout>
+                </ModalContextProvider>
+              </FileContextProvider>
+          </Switch>
+        </BrowserRouter>
     </div>
   );
 }
