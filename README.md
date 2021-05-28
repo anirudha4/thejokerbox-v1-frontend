@@ -6,6 +6,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+
+## SCREENSHOTS
+
+![](screenshots/login.png)
+
+![](screenshots/dashboard.png))
+
+![](screenshots/upload-2.png)
+
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
